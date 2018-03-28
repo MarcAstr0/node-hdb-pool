@@ -1,0 +1,51 @@
+{
+  "author": {
+    "name": "Peter Molnar",
+    "email": "peter.molnar@unodc.org"
+  },
+  "contributors": [
+    {
+      "name": "Mario Castro Squella",
+      "email": "yo@marcastr0.com",
+      "url": "http://marcastr0.com/"
+    }
+  ],
+  "dependencies": {
+    "async": "*",
+    "generic-pool": "2.4.2",
+    "hana-saml-wsse": "*",
+    "hdb": "*",
+    "moment": "*",
+    "node-uuid": "*",
+    "precise": "*",
+    "underscore": "*"
+  },
+  "description": "SAP HANA connection pool",
+  "devDependencies": {
+    "colors": "*",
+    "d3": "3.5.*",
+    "express": "*",
+    "http": "*",
+    "lorem-ipsum": "*",
+    "mocha": "*",
+    "should": "*",
+    "tracer": "*"
+  },
+  "keywords": [
+    "hana",
+    "hdb",
+    "pool",
+    "saml"
+  ],
+  "license": "MIT",
+  "main": "./lib",
+  "name": "node-hdb-pool",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:MarcAstr0/node-hdb-pool.git"
+  },
+  "scripts": {
+    "test": "mocha tests/test.js"
+  },
+  "version": "2.2.17"
+}
