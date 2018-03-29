@@ -33,6 +33,7 @@ before(function() {
 	poolOpts = {
 		host: config.host,
 		port: config.port,
+        databaseName: config.databaseName
 		//logger: logger
 	};
 });
@@ -79,6 +80,9 @@ describe('HDB pool /', function() {
 				', params: [] },
 			select: { sql: 'SELECT * FROM HDBPOOLFUNC(?, ?)', params: [3, 'FUNCVALUE'] },
 			drop: { sql: 'drop function HDBPOOLFUNC', params: [] }
+		},
+		schema: {
+			set: { sql: 'SET SCHEMA ?', params: [config.user]}
 		}
 	};
 
@@ -529,6 +533,8 @@ describe('HDB pool /', function() {
 				// create pool
 				hpool = hdbPool.createPool(_.extend(optsUserPass, {maxPoolSize: 3}));
 				checkPool(hpool);
+				// set schema
+				hpool.exec(sqls.schema.set.sql);
 			});
 
 			afterEach(function(done) {

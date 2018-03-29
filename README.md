@@ -1,7 +1,3 @@
-Below is the README of the original package.
-
----
-
 HDB connection pool
 =============
 SAP HANA connection pool based on [node-hdb](https://github.com/SAP/node-hdb) driver and [node-pool](https://github.com/coopernurse/node-pool) generic pool.
@@ -29,7 +25,8 @@ var hpool = hdbPool.createPool({
 	port: 30015,
 	user: 'user',
 	password: 'secret',
-	maxPoolSize: 5
+	maxPoolSize: 5,
+	databaseName: 'DB'
 });
 ```
 
@@ -162,6 +159,7 @@ Config parameter details:
 * `resphPrefix`: Optional prefix concatenated to response header in case of HTTP mode.
 * `logger`: Optional. False by default. In order to enable logging, reference to a configured [tracer](https://github.com/baryon/tracer) logger should be set.
 * `defaultSchema`: Optional. Default schema. By default no schema is setup, so the default schema of the `user` will be used.
+* `databaseName`: The name of the database when connecting to a multitenant system.
 
 Recommended logger setup:
 ```
